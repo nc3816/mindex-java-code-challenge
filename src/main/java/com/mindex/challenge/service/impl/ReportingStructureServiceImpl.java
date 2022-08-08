@@ -35,7 +35,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
     }
 
     /**
-     * 获取下发报告数量统计 递归
+     * Get the number of reports
      * @param employeeId
      * @return
      */
@@ -46,7 +46,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
         if (employee == null) {
             throw new RuntimeException("getNumberOfReports Invalid employeeId: " + employeeId);
         }
-        //查有直接报告的人员ids
+        //get the reporting employee ids
         List<Employee> reports = employee.getDirectReports();
         if (reports != null && reports.size() > 0) {
             for (Employee reportingEmployee : reports) {
