@@ -35,7 +35,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
     }
 
     /**
-     * Get the number of reports
+     * Get the number of reports 
      * @param employeeId
      * @return
      */
@@ -46,7 +46,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
         if (employee == null) {
             throw new RuntimeException("getNumberOfReports Invalid employeeId: " + employeeId);
         }
-        //get the reporting employee ids
+        //get the reporting employees' id
         List<Employee> reports = employee.getDirectReports();
         if (reports != null && reports.size() > 0) {
             for (Employee reportingEmployee : reports) {
